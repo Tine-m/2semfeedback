@@ -146,7 +146,9 @@ collect **afslutter en stream og samler resultatet op**.
 List<Task> overdueTasks =
     tasks.stream()
          .filter(task -> task.getDueDate().isBefore(LocalDate.now()))
-         .collect(Collectors.toList());```
+         .collect(Collectors.toList());
+```
+
 
 Læs det sådan:
 
@@ -169,9 +171,8 @@ i stedet for
 #### Forklaring
 
 - `collect(...)` er den **generelle måde** at afslutte en stream og samle resultatet
-- `toList()` er en **kortere og mere læsbar genvej** til den mest almindelige brug
+- `toList()` er en **kortere og mere læsbar genvej** til den mest almindelige brug (nemlig at få resultatet som en ny `List`).
 
-Begge løsninger er korrekte og gør det samme i denne sammenhæng.
 
 > **Tommelfingerregel:**  
 > Brug `toList()` når du bare vil have en `List`, og `collect(...)` når du vil samle data på en mere avanceret måde.
@@ -193,4 +194,4 @@ Begge løsninger er korrekte og gør det samme i denne sammenhæng.
   - `sorted` sortér elementer
 
 > **collect = hvad skal resultatet ende som?**
-Uden `collect` (eller `toList`) får du intet resultat.
+- Uden `collect` (eller `toList`) får du intet resultat.
